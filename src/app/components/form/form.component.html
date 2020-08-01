@@ -1,0 +1,117 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field *ngIf="isEdit">
+    <mat-label>UID</mat-label>
+    <input
+      matInput
+      placeholder="UID"
+      value=""
+      type="text"
+      formControlName="uid"
+    />
+  </mat-form-field>
+  <mat-form-field *ngIf="!isClient">
+    <mat-label>Username</mat-label>
+    <input
+      matInput
+      placeholder="Username"
+      value=""
+      type="text"
+      formControlName="username"
+    />
+    <mat-error>
+      {{ getErrorUsername() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field *ngIf="!isClient">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      placeholder="Password"
+      value=""
+      type="password"
+      formControlName="password"
+    />
+    <mat-error>
+      {{ getErrorPassword() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>SAP ID</mat-label>
+    <input
+      matInput
+      placeholder="SAP ID"
+      value=""
+      type="text"
+      formControlName="sapId"
+    />
+    <mat-error>
+      {{ getErrorSapId() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field *ngIf="isClient">
+    <mat-label>Full Name</mat-label>
+    <input
+      matInput
+      placeholder="Full Name"
+      value=""
+      type="text"
+      formControlName="fullName"
+    />
+    <mat-error>
+      {{ getErrorFullName() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field *ngIf="isClient">
+    <mat-label>Short Name</mat-label>
+    <input
+      matInput
+      placeholder="Short Name"
+      value=""
+      type="text"
+      formControlName="shortName"
+    />
+    <mat-error>
+      {{ getErrorShortName() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field *ngIf="!isAdmin">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      placeholder="Email"
+      value=""
+      type="email"
+      formControlName="email"
+    />
+    <mat-error>
+      {{ getErrorEmail() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field *ngIf="!isAdmin">
+    <mat-label>Address</mat-label>
+    <input
+      matInput
+      placeholder="Address"
+      value=""
+      type="text"
+      formControlName="address"
+    />
+    <mat-error>
+      {{ getErrorAddress() }}
+    </mat-error>
+  </mat-form-field>
+  <mat-label *ngIf="isUser" class="roles-title">Roles</mat-label>
+
+  <app-roles-pick *ngIf="isUser"  [(availableRoles)]="userRoles" [AllRoles]="allRoles">
+  </app-roles-pick>
+
+  <mat-checkbox formControlName="enabled" color="primary" [checked]="true"
+    >Enabled
+  </mat-checkbox>
+  <div class="btn-container">
+    <button mat-raised-button color="primary" class="btn-save">
+      <mat-spinner color="accent" diameter="24" *ngIf="loading"></mat-spinner>
+      <span *ngIf="!loading">Save</span>
+    </button>
+  </div>
+</form>

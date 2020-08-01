@@ -1,0 +1,23 @@
+<div>
+  <p-pickList
+    [source]="availableRoles"
+    [target]="enableRoles"
+    sourceHeader="Available"
+    targetHeader="Enabled"
+    dragdrop="true"
+    filterBy="name"
+    [responsive]="true"
+    [sourceStyle]="{ height: '300px' }"
+    [targetStyle]="{ height: '300px' }"
+    (onMoveToTarget)="rolesChange($event)"
+    (onMoveToSource)="rolesChange($event)"
+  >
+    <ng-template let-role pTemplate="item">
+      <div class="ui-helper-clearfix">
+        <div style="font-size: 14px; margin: 15px 5px 0 0;">
+          {{ role.name}}
+        </div>
+      </div>
+    </ng-template>
+  </p-pickList>
+</div>

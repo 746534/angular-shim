@@ -1,0 +1,40 @@
+form,
+div,
+mat-form-field,
+input{
+  width: 100%;
+}
+div label{
+  display: block;
+  margin: 10px 0;
+}
+p-button{
+  float: right;
+}
+:host ::ng-deep .ui-button.ui-button-text-only .ui-button-text{
+  font-size: 16px;
+  padding: 8px 30px;
+  border-radius: 6px;
+}
+form{
+  box-sizing: border-box;
+  padding: 20px 50px;
+}
+input[disabled]{
+  background-color: #ccc;
+}
+
+.btn-container{
+  margin-top: 1em;
+}
+.btn-save{
+  flex:1;
+}
+.btn-container,.btn-save{
+  display: flex;
+  justify-content: center;
+}
+
+.roles-title{
+  
+}

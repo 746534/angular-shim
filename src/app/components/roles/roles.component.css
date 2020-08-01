@@ -1,0 +1,29 @@
+:host ::ng-deep .ui-table .ui-table-tbody>tr>td{
+  border: 0;
+}
+:host ::ng-deep .ui-table .ui-table-tbody>tr{
+  border:1px solid #ccc;
+ 
+}
+:host ::ng-deep .ui-table .ui-table-tbody>tr:nth-child(even) {
+ background-color: #fff;
+ }
+#content td:last-child{
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+}
+#roleData{
+  width: 100%;
+}
+p-button{
+  float: right;
+  margin: 19px 0 ;
+  min-width:100px;
+}
+:host ::ng-deep .ui-button {
+  width: 100%;
+}
+h2{
+  float: left;
+}

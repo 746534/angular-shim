@@ -1,0 +1,31 @@
+div {
+  position: relative;
+}
+:host ::ng-deep .ui-picklist.ui-picklist-responsive .ui-picklist-buttons:first-child,
+:host ::ng-deep .ui-picklist.ui-picklist-responsive .ui-picklist-buttons:last-child
+{
+  display:none;
+}
+:host ::ng-deep .ui-picklist .ui-picklist-list .ui-picklist-item {
+  border-bottom: 1px solid #ccc;
+}
+:host ::ng-deep .ui-picklist .ui-picklist-list{
+  border-radius: 5px;
+}
+:host ::ng-deep .ui-picklist .ui-picklist-caption{
+  border: none;
+  background-color: transparent;
+  text-align: left;
+}
+:host ::ng-deep .ui-picklist.ui-picklist-responsive{
+  width:80%;
+}
+:host ::ng-deep .ui-button.ui-button-text-only .ui-button-text{
+  padding: 5px 20px;
+  font-size: 16px;
+}
+p-button{
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+}

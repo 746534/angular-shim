@@ -1,0 +1,14 @@
+<div class="container">
+  <div id="button">
+    <p-button label="Create" routerLink="add"></p-button>
+  </div>
+  <app-table 
+    [tableType]="'admin'"
+    [items]="adminService.admin$ | async"
+    (tableEvent)="tableEvent($event)"
+  >
+  </app-table>
+  
+</div>
+
+

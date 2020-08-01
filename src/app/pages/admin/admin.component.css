@@ -1,0 +1,19 @@
+
+p-button {
+  float: right;
+  margin-right: 30px;
+}
+
+:host ::ng-deep #button .ui-button {
+  width: 165px;
+  height: 40px;
+  font-size: 16px;
+}
+
+div#button {
+  overflow: hidden;
+}
+
+p-table {
+  width: 100%;
+}

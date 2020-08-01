@@ -1,0 +1,57 @@
+.row {
+  margin: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #343A40;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px 10px;
+}
+.row a{
+  color: #aaa;
+}
+
+.row>div{
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.col div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  color: #aaa;
+}
+.col div:hover{
+  cursor: pointer;
+}
+.col .active {
+  color: #fff;
+}
+#search{
+  flex: 2;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+:host ::ng-deep #search .ui-button {
+  background-color: transparent;
+  border: 1px solid #1CA5B8;
+  color: #1CA5B8;
+  height: 100%;
+}
+#searchTerm
+ {
+  width: 100%;
+  height: 100%;
+  text-indent: 1em;
+}
+p-button{
+  height:100% ;
+}
+.col a:hover{
+  color: #fff;
+}

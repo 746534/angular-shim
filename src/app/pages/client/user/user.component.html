@@ -1,0 +1,2 @@
+<app-form formType="user" [data]="userService.current$|async" [allRoles]="roleService.roles$|async"
+  [userRoles]="(userService.current$|async).roles"></app-form>

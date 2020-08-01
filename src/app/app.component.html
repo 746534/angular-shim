@@ -1,0 +1,7 @@
+<div class="container" *ngIf="accountService.loginUser$ | async">
+  <app-nav></app-nav>
+  <app-bread-crumbs></app-bread-crumbs>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

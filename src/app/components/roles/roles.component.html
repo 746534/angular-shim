@@ -1,0 +1,22 @@
+<div>
+  <h2>Role</h2>
+  <p-button label="Add" (click)="add()"></p-button>
+  <input
+    id="roleData"
+    type="text"
+    pInputText
+    placeholder="Search"
+    [(ngModel)]="value.name"
+  />
+</div>
+<div>
+  <h2>Roles</h2>
+  <p-table [value]="values">
+    <ng-template pTemplate="body" let-value>
+      <tr id="content">
+        <td>{{ value.name }}</td>
+        <td *ngIf="value.delete">1215</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

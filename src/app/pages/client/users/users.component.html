@@ -1,0 +1,11 @@
+<div class="container">
+  <div id="button">
+    <p-button label="Create" routerLink="add"></p-button>
+  </div>
+  <app-table
+    [tableType]="'user'"
+    [items]="users"
+    (tableEvent)="tableEvent($event)"
+  >
+  </app-table>
+</div>

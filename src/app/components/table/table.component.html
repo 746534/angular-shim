@@ -1,0 +1,70 @@
+<p-table [value]="items">
+  <ng-template pTemplate="header">
+    <tr id="title">
+      <th
+        *ngFor="let item of headers; let key = index"
+        [colSpan]="key == 1 ? 2 : key == 0 ? 2 : 1"
+      >
+        {{ item }}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr id="content" (click)="selectRow($event, item)">
+      <td colspan="2">
+        <div class="row">
+          <div *ngIf="isClient">
+            {{ item.sName }}
+          </div>
+          <div *ngIf="!isClient">
+            <i class="pi pi-user"></i>
+          </div>
+          <div>
+            <h3>{{ item.name || item.username }}</h3>
+            <span *ngIf="item.email">email:{{ item.email }}</span>
+            <span *ngIf="item.address">地址:{{ item.address }}</span>
+            <p>uid:{{ item.sapId }}</p>
+          </div>
+        </div>
+      </td>
+      <td colspan="2" *ngIf="!isAdmin">
+        <div class="col">
+          <div class="img">
+            <div
+              *ngFor="
+                let subItem of item.roles || item.users;
+                let index = index
+              "
+              [style]="index > 2 ? 'display:none' : 'display:block'"
+              (click)="isClient ? selectUser($event, item, subItem) : ''"
+            >
+              <div class="client" *ngIf="subItem.uid">
+                <i class="pi pi-user"></i>
+              </div>
+              <p-button
+                [label]="subItem.name"
+                class="ui-button-rounded"
+                *ngIf="!subItem.uid"
+              ></p-button>
+            </div>
+          </div>
+          <p
+            *ngIf="item.users"
+            [style]="item.users.length > 3 ? '' : 'visibility:hidden'"
+          >
+            +{{ item.users.length - 3 }}
+          </p>
+        </div>
+      </td>
+      <td [colSpan]="isAdmin ? 2 : 1" class="right">
+        <button
+          mat-raised-button
+          [color]="item.enabled ? 'primary' : 'accent'"
+          (click)="updateRow($event, item)"
+        >
+          {{ item.enabled ? "enable" : "disable" }}
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
